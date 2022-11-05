@@ -1,0 +1,116 @@
+While 1
+	main
+Wend
+
+Sub main
+	logout1 
+	account 
+	planet
+	start1
+End Sub
+
+Sub logout1
+	index=-1
+	While index < 0
+		FindPic 0, 0, 1920, 1080, "Attachment:\fanhuiinmap.bmp", 0.7, intX, intY		
+		TracePrint intX
+		If intX > 0 and intY > 0 Then 
+			index=1
+    		MoveTo intX -767 + 20, intY -115 + 10
+    		Delay 100
+    		LeftDoubleClick 2
+    		Delay 300
+    		KeyPress "ENTER",1
+		Else    
+    		KeyPressH "ESC", 1
+    		Delay 1500
+		End If  
+	Wend
+End Sub
+
+Sub account
+	index=-1
+	While index < 0
+		FindPic 0, 0, 1920, 1080, "Attachment:\0040.bmp", 0.8, intX, intY
+		TracePrint intX
+		If intX > 0 and intY > 0 Then 
+			
+			index=1
+    		MoveTo intX, intY + 200
+    		Delay 100
+    		LeftDoubleClick 2
+		Else    
+    		Delay 1000
+		End If  
+	Wend
+	Delay 1000
+End Sub
+
+Sub planet
+	index=-1
+	While index < 0
+		FindPic 0,0,1920,1080,"Attachment:\zuobiao2.bmp",0.8,intX,intY   //1090,243
+		TracePrint intX
+		If intX > 0 and intY > 0 Then 
+			index=1
+    		MoveTo intX - 850, intY + 300 //王座世界 
+    		Delay 100
+    		LeftDoubleClick 2
+    		Delay 500
+    		MoveR 320-90, 250 //剧情战役 
+    		Delay 200
+    		LeftDoubleClick 10
+    		Delay 500
+    		//MoveTo intX, intY + 500 //选择关卡 
+    		//Delay 100
+    		//LeftDoubleClick 2
+    		//Delay 500
+    		//MoveTo intX - 950, intY + 140 //到来 
+    		//Delay 100
+    		//LeftDoubleClick 2
+    		//Delay 500
+    		MoveTo intX, intY + 540 //开始 
+    		Delay 500
+		Else 
+			KeyPressH "M",1
+    		Delay 4000
+		End If  
+	Wend
+	Delay 1000
+End Sub
+
+Sub start1
+	index = - 1 
+	While index < 0
+		
+		FindPic 0,0,1920,1080,"Attachment:\404.bmp",0.8,intX,intY
+		TracePrint intX
+		
+
+		If intX > 0 Then 
+			index = 1
+			Delay 1000
+			LeftDoubleClick 2
+			Delay 5000
+		End If
+		Delay 500
+	Wend
+End Sub
+
+Sub start
+	index = - 1 
+	While index < 0
+		FindPic 0, 0, 1920, 1080, "Attachment:\fanhui2.bmp", 0.8, intX, intY
+		FindColorEx 0,0,1024,768,"0000FF",0,0.9,intX,intY
+		TracePrint intX
+		FindPic 1040, 170, 1120, 195, "Attachment:\tianjia.bmp", 0.8, intX1, intY1
+		TracePrint intY
+		If intX > 0 And intX1 < 0 Then 
+			index = 1
+			Delay 1000
+			LeftDoubleClick 2
+		End If
+		Delay 500
+	Wend
+End Sub
+
